@@ -1,0 +1,79 @@
+#container {
+	padding-top: 100px;
+}
+
+.loginArea {
+	width: 450px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+input {
+	border: none;
+	width: 340px;
+	height: 20px;
+	font-size: 14px;
+}
+
+.loginBox {
+	border: 1px solid lightgray;
+	border-radius: 7px;
+	padding: 30px 20px;
+}
+
+.infoArea {
+	border: 1px solid lightgray;
+	border-radius: 7px;
+}
+
+.idArea {
+	height: 40px;
+	border-bottom: 1px solid lightgray;
+	line-height: 40px;
+}
+
+.pwArea {
+	height: 40px;
+	line-height: 40px;
+}
+
+.btnArea {
+	padding-top: 30px;
+}
+
+.loginBtn {
+	width: 406px;
+	height: 40px;
+	background-color: rgb(227, 229, 236);
+	border: 1px solid rgb(227, 229, 236);
+	font-size: 16px;
+}
+
+.helpArea {
+	padding-top: 30px;
+}
+
+.helpArea a {
+	padding: 0 10px;
+	border-right: 1px solid rgb(227, 229, 236);
+}
+
+.helpArea a:last-child {
+	border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

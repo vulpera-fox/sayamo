@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/community-update.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+	
+	<div th:replace=" ~{ /layout/header :: header }"></div>
+	
+	<div id="container">
+		
+		<div class="contentArea">
+			<div class="categoryTabBox">
+				<div class="backLinkTab">
+					<a id="backLink" th:href="@{/community/index}"><i class="bi bi-caret-left-fill"></i>뒤로가기</a>
+				</div>
+			</div>
+			
+			<form action="updatePostForm" method="post">
+				<div class="postArea">
+					<div class="postHeader">
+						<input type="text" class="post_author" name="post_author" th:value="${username}" hidden/>
+						<input type="text" class="post_id" name="post_id" th:value="${postVO.post_id}" hidden/>
+						<div class="categoryTab">
+							<p>분류</p>
+							<p class="category free">자유</p>
+							<p class="category question">질문</p>
+							<p class="category ad">팀홍보</p>
+							<input type="text" class="board_id" name="board_id" value="01" hidden/>
+						</div>
+							<div class="titleTab">
+								<input type="text" class="post_title" name="post_title" th:value="${postVO.post_title}"/>
+							</div>
+					</div>
+					<div class="postBody">
+						<textarea name="post_content" class="post_content">[[${postVO.post_content}]]</textarea>
+					</div>
+					<div class="btnArea">
+						<button class="goBackBtn" type="button">취소</button>
+						<button class="submitBtn" type="submit">등록</button>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<script th:inline="javascript">
+		
+		$(document).ready(function() {
+			var category = [[${postVO.board_id}]];
+			console.log(category);
+			if(category === "자유"){
+				$('.free').addClass("currCategory");
+			} else if (category === "질문"){
+				$('.question').addClass("currCategory");
+			} else {
+				$('.ad').addClass("currCategory");
+			}
+		})
+		
+		$('.category').click(function(e){
+			console.log(e.target);
+			$('.category').removeClass("currCategory");
+			$(e.target).addClass("currCategory");
+			if($(e.target).text() === "자유"){
+				$('.board_id').val("01");
+			} else if($(e.target).text() === "질문"){
+				$('.board_id').val("02");
+			} else {
+				$('.board_id').val("03");
+			}
+		});
+		
+										
+	</script>
+	
+	
+</body>
+</html>

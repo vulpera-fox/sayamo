@@ -1,0 +1,39 @@
+.infoArea {
+	border: 1px solid black;
+	width: 1202px;
+	height: 600px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.infoArea > div {
+	float: left;
+}
+
+.personalInfoArea {
+	width: 360px;
+	text-align: center;
+	padding: 20px 20px;
+	height: 100%;
+	font-size: 17px;
+	border-right: 1px solid lightgray;
+}
+
+.personalInfoBox div {
+	padding: 10px 0;	
+}
+
+.teamPostInfoArea {
+	width: 840px;
+	height: 100%;
+	padding: 20px 20px;
+}
+
+.mypostArea {
+	
+}
+
+.post p {
+	display: inline-block;
+}
+

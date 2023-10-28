@@ -1,0 +1,57 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ 
+ <mapper namespace="com.vulfox.sayamo.service.LeagueMapper">
+ 
+ 
+ 
+ 	<select id="getLeagueList">
+ 		select league_id,
+ 			   league_name,
+ 			   date_format(league_start_date, "%Y-%m-%d") as league_start_date,
+ 			   date_format(league_end_date, "%Y-%m-%d") as league_end_date,
+ 			   location_id
+ 			   from leagues
+ 	</select>
+ 	
+ 	<select id="getLeagueListByLocation">
+		select league_id,
+ 			   league_name,
+ 			   date_format(league_start_date, "%Y-%m-%d") as league_start_date,
+ 			   date_format(league_end_date, "%Y-%m-%d") as league_end_date,
+ 			   location_id
+ 			   from leagues where location_id = #{location_id}
+ 	</select>
+ 	
+ 	<select id="getTeamList">
+ 		select * from teams
+ 	</select>
+ 	
+ 	<select id="getWinList">
+ 		select (select (select user_code from users where username = playerstats.username)) as username, pitcher_win from playerstats where team_id in (select team_id from teams where league_id = #{league_id}) order by pitcher_win desc limit 0, 3
+ 	</select>
+ 	<select id="getEraList">
+ 		with eraTable as (select (select user_code from users where username = playerstats.username) as username, round( (9 * pitcher_run) / pitcher_ip, 3) as pitcher_era from playerstats where team_id in (select team_id from teams where league_id = #{league_id}))
+ 		
+		select * from eraTable where pitcher_era is not null order by pitcher_era limit 0, 3
+	</select>
+ 	<select id="getSoList">
+ 		select (select (select user_code from users where username = playerstats.username)) as username, pitcher_so from playerstats where team_id in (select team_id from teams where league_id = #{league_id}) order by pitcher_so desc limit 0, 3
+ 	</select>
+ 	<select id="getBaList">
+ 		with baTable as (select (select user_code from users where username = playerstats.username) as username, round( batter_hit / batter_pa, 3) as batter_ba from playerstats where team_id in (select team_id from teams where league_id = #{league_id}))
+ 		
+		select * from baTable where batter_ba is not null order by batter_ba limit 0, 3
+ 	</select>
+ 	<select id="getRbiList">
+ 		select (select (select user_code from users where username = playerstats.username)) as username, batter_rbi from playerstats where team_id in (select team_id from teams where league_id = #{league_id}) order by batter_rbi desc limit 0, 3
+ 	</select>
+ 	<select id="getHrList">
+ 		select (select (select user_code from users where username = playerstats.username)) as username, batter_hr from playerstats where team_id in (select team_id from teams where league_id = #{league_id}) order by batter_hr desc limit 0, 3
+ 	</select>
+ 	
+ 
+ 
+ </mapper>

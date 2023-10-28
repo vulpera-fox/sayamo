@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/login.css">
+<title>사야모</title>
+</head>
+<body>
+	
+		
+		<div th:replace=" ~{ /layout/header :: header }"></div>
+		
+		<div id="container">
+			
+			<div class="loginArea">
+				<form action="/loginForm" method="post">
+					<div class="loginBox">
+						<div class="infoArea">
+							<div class="idArea">
+								<input type="text" class="username" name="username" placeholder="아이디"/>
+							</div>
+							<div class="pwArea">
+								<input type="password" class="password" name="password" placeholder="비밀번호"/>
+							</div>
+						</div>
+						<div class="btnArea">
+							<button class="loginBtn">로그인</button>
+						</div>
+					</div>
+				</form>
+				<div class="helpArea">
+					<a href="/findId">아이디 찾기</a>
+					<a href="/findPw">비밀번호 찾기</a>
+					<a href="/register">회원가입</a>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

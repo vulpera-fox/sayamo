@@ -1,0 +1,49 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.vulfox.sayamo.service.UserMapper">
+
+	<insert id="register">
+		insert into users (username, password, user_code, user_email) values (#{username}, #{password}, #{user_code}, #{user_email})
+	</insert>
+	
+	<select id="login">
+		select * from users where username = #{username}
+	</select>
+	
+	<select id="isDuplicatedId">
+		select * from users where username = #{username}
+	</select>
+	
+	<select id="isDuplicatedEmail">
+		select * from users where user_email = #{user_email}
+	</select>
+
+	<select id="getUserInfo">
+		select username, user_email, user_code from users where username = #{username}
+	</select>
+	
+	<select id="getMyTeam">
+		select * from teams where team_id = (select team_id from users where username = ${username})
+	</select>
+	
+	<select id="getMyPost">
+		select post_id,
+			   post_title,
+			   post_content,
+		       post_author,
+		       post_regist_date,
+		       post_views,
+		       post_likes,
+		       post_dislikes,
+		       case
+				   when board_id = "01" then "자유"
+			       when board_id = "02" then "질문"
+			       when board_id = "03" then "팀홍보"
+			   end as board_id
+		from posts where post_author = '${username}' limit 0, 5
+	</select>
+
+
+</mapper>

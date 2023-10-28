@@ -1,0 +1,102 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.vulfox.sayamo.service.CommunityMapper">
+ 
+ 	<select id="getPostList">
+	 	select post_id,
+			   post_title,
+			   post_content,
+		       post_author,
+		       post_regist_date,
+		       post_views,
+		       post_likes,
+		       post_dislikes,
+		       case
+				   when board_id = "01" then "자유"
+			       when board_id = "02" then "질문"
+			       when board_id = "03" then "팀홍보"
+			   end as board_id
+	    from posts
+ 	</select>
+ 	
+ 	<select id="getPostListByCategory">
+ 		select post_id,
+			   post_title,
+			   post_content,
+		       post_author,
+		       post_regist_date,
+		       post_views,
+		       post_likes,
+		       post_dislikes,
+		       case
+				   when board_id = "01" then "자유"
+			       when board_id = "02" then "질문"
+			       when board_id = "03" then "팀홍보"
+			   end as board_id
+	    from posts
+	    where board_id = #{board_id}
+ 	</select>
+ 	
+ 	<select id="getPost">
+ 		select post_id,
+			   post_title,
+			   post_content,
+		       post_author,
+		       post_regist_date,
+		       post_views,
+		       post_likes,
+		       post_dislikes,
+		       case
+				   when board_id = "01" then "자유"
+			       when board_id = "02" then "질문"
+			       when board_id = "03" then "팀홍보"
+			   end as board_id
+	    from posts
+	    where post_id = #{post_id}
+ 	</select>
+ 	
+ 	<select id="getPreviousPost">
+ 		select * from posts where post_id = #{post_id} - 1
+ 	</select>
+ 	
+ 	<select id="getNextPost">
+ 		select * from posts where post_id = #{post_id} + 1
+ 	</select>
+ 	
+ 	<select id="getCommentList">
+ 		select comment_id,
+			   comment_content,
+		       date_format(comment_regist_date, '%m-%d %H:%i') as comment_regist_date,
+		       user_name,
+		       post_id
+       from comments where post_id = #{post_id}
+ 	</select>
+ 	
+ 	<insert id="addComment">
+ 		insert into comments (comment_content, user_name, post_id) values (#{comment_content}, #{user_name}, #{post_id})
+ 	</insert>
+ 	
+ 	<delete id="deleteComment">
+ 		delete from comments where comment_id = #{comment_id}
+ 	</delete>
+ 	
+ 	<update id="updateViews">
+ 		update posts set post_views = post_views + 1 where post_id = #{post_id}
+ 	</update>
+ 	
+ 	<insert id="addPost">
+ 		insert into posts (post_title, post_content, post_author, board_id) values (#{post_title}, #{post_content}, #{post_author}, #{board_id})
+ 	</insert>
+ 	
+ 	<delete id="deletePost">
+ 		delete from posts where post_id = #{post_id}
+ 	</delete>
+ 	
+ 	<update id="updatePost">
+ 		update posts set post_title = #{post_title}, post_content = #{post_content}, board_id = #{board_id} where post_id = #{post_id}
+ 	</update>
+ 	
+ 
+ </mapper>

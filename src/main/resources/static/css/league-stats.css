@@ -1,0 +1,107 @@
+
+
+#container {
+	position: relative;
+}
+
+.leagueSidebar {
+	position: absolute;
+	top: 150px;
+	left: 100px;
+	border: 1px solid black;
+	width: 100px;
+	height: 120px;
+}
+
+.leagueSidebar ul {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+
+.leagueSidebar ul li {
+	text-align: center;
+	padding: 3px 0;
+}
+
+.contentArea {
+	width: 1200px;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+
+.statsArea {
+	overflow: hidden;
+	padding: 10px 20px;
+	width: 760px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.statsArea > div {
+	float: left;
+	width: 120px;
+	height: 100px;
+	text-align: center;
+}
+
+.statsArea > div > p {
+	font-size: 14px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid black;
+	margin-bottom: 5px;
+}
+
+.regionTabBox {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 3px 0;
+	text-align: center;
+}
+
+.regionTab {
+	text-align: center;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.regionTab a {
+	float: left;
+	width: 83px;
+	border-left: 1px solid black;
+	text-align: center;
+}
+
+.regionTab a:last-child {
+	border-right: 1px solid black;
+}
+
+.regionTab a:hover {
+	background-color: rgb(224, 224, 224);
+}
+
+.leagueList p {
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+}
+
+.listHeader {
+	text-align: center;
+	padding: 5px 0;
+	border-bottom: 1px solid gray;
+}
+
+.listBody {
+	padding: 10px 0;
+}
+
+.listBody li {
+	padding: 3px 0;
+}
+
+.leagues {
+	
+}
+

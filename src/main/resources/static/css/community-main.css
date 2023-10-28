@@ -1,0 +1,81 @@
+.contentArea {
+	width: 1000px;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+
+.categoryTabBox {
+	border-bottom: 1px solid black;
+	padding: 3px 0;
+	text-align: center;
+	position: relative;
+}
+
+.categoryTab {
+	text-align: center;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.categoryTab a {
+	float: left;
+	width: 100px;
+	border-left: 1px solid black;
+	text-align: center;
+}
+
+.categoryTab a:last-child {
+	border-right: 1px solid black;
+}
+
+.categoryTab a:hover {
+	background-color: rgb(224, 224, 224);
+}
+
+.goWrite {
+	position: absolute;
+	right: 20px;
+}
+
+.boardArea {
+	
+}
+
+.boardArea p {
+	display: inline-block;
+	text-align: center;
+}
+
+.boardHeader {
+	padding: 8px 0;
+	border-bottom: 1px solid lightgray;
+}
+
+.boardBody {
+	padding: 15px 0;
+	font-size: 15px;
+}
+
+.post {
+	padding: 3px 0;
+}
+
+.board_category {
+	width: 10%;
+}
+
+.post_title {
+	width: 35%;
+}
+
+.post_author {
+	width: 10%;
+}
+
+.post_views {
+	width: 10%;
+}
+
+.post_date {
+	width: 15%;
+}

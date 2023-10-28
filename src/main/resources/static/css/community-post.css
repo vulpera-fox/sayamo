@@ -1,0 +1,134 @@
+.contentArea {
+	width: 1000px;
+	border-top: 1px solid black;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.categoryTabBox {
+	border-bottom: 1px solid black;
+	padding: 3px 0;
+	
+}
+
+.categoryTab {
+	display: inline-block;
+	overflow: hidden;
+	text-align: center;
+}
+
+.categoryTab a {
+	float: left;
+	width: 100px;
+}
+
+
+.categoryTab a:hover {
+	background-color: rgb(224, 224, 224);
+}
+
+.postArea {
+	
+}
+
+.deletePostBtn {
+	padding-left: 550px;
+}
+
+.post_views {
+	padding-left: 15px;
+}
+
+
+.postArea p {
+	display: inline-block;
+	text-align: center;
+}
+
+.postHeader {
+	padding: 8px 0;
+	border-bottom: 1px solid lightgray;
+}
+
+.postBody {
+	padding: 30px 5px;
+	font-size: 15px;
+	min-height: 200px;
+}
+
+.commentArea {
+	border-bottom: 1px solid black;
+}
+
+
+.commentHeader {
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+}
+
+.commentBody {
+	padding: 2px 0;
+}
+
+.commentAdd {
+	overflow: hidden;
+	padding: 10px 0;
+}
+
+.commentBox {
+	width: 80%;
+	height: 100px;
+	resize: none;
+	float: right;
+}
+
+.comment {
+	padding: 5px 5px;
+	border-bottom: 1px solid lightgray;
+}
+
+.comment:last-child {
+	border: none;
+}
+
+.user_name {
+	width: 10%;
+}
+
+.comment_content {
+	width: 69%;
+}
+
+.comment_regist_date {
+	width: 18%;
+	padding-right: 20px;
+}
+
+.btnArea {
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+
+.submitBtn {
+	float: right;
+	width: 80px;
+	height: 30px;
+	background-color: darkgray;
+	border: 1px solid black;
+}
+
+.deleteBtn {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.deleteBtn:focus {
+	outline: none;
+}
+
+.commentErrMsg {
+	border-top: 1px solid black;
+	padding: 10px 0;
+}
+

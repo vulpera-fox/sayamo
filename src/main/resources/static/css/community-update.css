@@ -1,0 +1,124 @@
+.contentArea {
+	width: 1000px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.categoryTabBox {
+	border-bottom: 1px solid black;
+	padding: 3px 0;
+}
+
+.backLinkTab {
+	padding: 3px 0;
+}
+
+.categoryTab {
+	display: inline-block;
+	overflow: hidden;
+	text-align: center;
+	border: 1px solid rgb(224, 224, 224);
+	padding: 5px 5px;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.categoryTab p {
+	float: left;
+	width: 100px;
+	padding: 5px 0;
+	margin: 0 3px;
+	border-radius: 10px;
+}
+
+.categoryTab a:hover {
+	background-color: rgb(224, 224, 224);
+}
+
+.category {
+	cursor: pointer;
+}
+
+.postArea {
+	
+}
+
+.post_views {
+	padding-left: 700px;
+}
+
+
+.postArea p {
+	display: inline-block;
+	text-align: center;
+}
+
+.postHeader {
+	padding: 8px 0;
+	border-bottom: 1px solid black;
+}
+
+.titleTab {
+	position: relative;
+}
+
+.post_title {
+	width: 700px;
+	height: 30px;
+}
+
+.inputPlaceholder {
+	position: absolute;
+	font-size: 14px;
+	color: lightgray;
+	top: 7px;
+	left: 20px;
+}
+
+.postBody {
+	padding: 30px 5px;
+	font-size: 15px;
+	min-height: 200px;
+}
+
+.post_content {
+	resize: none;
+	width: 990px;
+	height: 500px;
+	overflow: scroll;
+}
+
+.btnArea {
+	text-align: end;
+	padding: 0 30px;
+}
+
+.btnArea button {
+	width: 85px;
+	height: 40px;
+	color: white;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.goBackBtn {
+	background-color: gray;
+}
+
+.submitBtn {
+	background-color: blue;
+}
+
+
+
+.hide {
+	display: none;
+}
+
+.currCategory {
+	background-color: lightblue;
+}
+

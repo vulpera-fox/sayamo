@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	
+	<th:block th:fragment="header">
+		<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		
+		<div id="headerContainer">
+			
+			<div class="header">
+				<div class="topHeader">
+					<div class="accountArea">
+						<a sec:authorize="isAuthenticated()" href="/mypage">마이페이지</a>
+						<a sec:authorize="!isAuthenticated()" href="/login">로그인</a>
+						<a sec:authorize="isAuthenticated()" href="/logout">로그아웃</a>
+					</div>
+				</div>
+				
+				<div class="titleArea">
+					<div class="title">
+						<p style="font-size: 52px;"><a th:href="@{/community/index}">사야모</a></p>
+					</div>
+					<div class="tabArea">
+						<p><a href="/league/index">사회인리그</a></p>
+						<p><a href="/community/index">야구이야기</a></p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</th:block>	
+	

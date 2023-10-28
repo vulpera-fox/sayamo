@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/community-write.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+	
+	<div th:replace=" ~{ /layout/header :: header }"></div>
+	
+	<div id="container">
+		
+		<div class="contentArea">
+			<div class="categoryTabBox">
+				<div class="backLinkTab">
+					<a id="backLink" th:href="@{/community/index}"><i class="bi bi-caret-left-fill"></i>뒤로가기</a>
+				</div>
+			</div>
+			
+			<form action="addPost" method="post">
+				<div class="postArea">
+					<div class="postHeader">
+						<input type="text" class="post_author" name="post_author" th:value="${username}" hidden/>
+						<div class="categoryTab">
+							<p>분류</p>
+							<p class="category currCategory">자유</p>
+							<p class="category">질문</p>
+							<p class="category">팀홍보</p>
+							<input type="text" class="board_id" name="board_id" value="01" hidden/>
+						</div>
+							<div class="titleTab">
+								<span class="inputPlaceholder">제목을 입력해 주세요.</span>
+								<input type="text" class="post_title" name="post_title"/>
+							</div>
+					</div>
+					<div class="postBody">
+						<textarea name="post_content" class="post_content"></textarea>
+					</div>
+					<div class="btnArea">
+						<button class="goBackBtn" type="button">취소</button>
+						<button class="submitBtn" type="submit">등록</button>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<script th:inline="javascript">
+		
+		$('.category').click(function(e){
+			console.log(e.target);
+			$('.category').removeClass("currCategory");
+			$(e.target).addClass("currCategory");
+			if($(e.target).text() === "자유"){
+				$('.board_id').val("01");
+			} else if($(e.target).text() === "질문"){
+				$('.board_id').val("02");
+			} else {
+				$('.board_id').val("03");
+			}
+		});
+		
+		$('.post_title').focus(function() {
+			$('.inputPlaceholder').addClass('hide');
+		});
+										
+	</script>
+	
+	
+</body>
+</html>

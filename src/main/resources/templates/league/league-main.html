@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/league-main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+	
+	<div th:replace=" ~{ /layout/header :: header }"></div>
+	
+	<div id="container">
+		
+		<div class="leagueSidebar">
+			<ul>
+				<li><a href="/league/index">리그 목록</a></li>
+				<li><a href="/league/stats">기록실</a></li>
+				<li><a href="/league/myteam">나의 팀</a></li>
+			</ul>
+		</div>
+		
+		<div class="contentArea">
+			<div class="regionTabBox">
+				<div class="regionTab">
+					<a th:href="@{/league/index(location_id='00')}">전체</a>
+					<a th:href="@{/league/index(location_id='01')}">서울</a>
+					<a th:href="@{/league/index(location_id='02')}">인천</a>
+					<a th:href="@{/league/index(location_id='03')}">대전</a>
+					<a th:href="@{/league/index(location_id='04')}">광주</a>
+					<a th:href="@{/league/index(location_id='05')}">대구</a>
+					<a th:href="@{/league/index(location_id='06')}">부산</a>
+					<a th:href="@{/league/index(location_id='07')}">울산</a>
+					<a th:href="@{/league/index(location_id='08')}">경기</a>
+					<a th:href="@{/league/index(location_id='09')}">강원</a>
+					<a th:href="@{/league/index(location_id='10')}">충청</a>
+					<a th:href="@{/league/index(location_id='11')}">경상</a>
+					<a th:href="@{/league/index(location_id='12')}">전라</a>
+				</div>
+			</div>
+			<div class="leagueList">
+				<div class="listHeader">
+					<p>리그 이름</p>
+					<p>개최 기간</p>
+					<p>참가팀 보기</p>
+				</div>
+				<div class="listBody">
+					<ul>
+						<li th:each="league : ${lList}" class="leagues">
+							<p>[[${league.league_name}]]</p>
+							<p>[[${league.league_start_date}]] - [[${league.league_end_date}]]</p>
+							<p><i class="bi bi-arrow-down-square openTeams"></i></p>
+							<div class="teamList">
+								<ul>
+									<li>
+										<p>팀 이름</p>
+										<p>승</p>
+										<p>무</p>
+										<p>패</p>
+									</li>
+									<li th:each="team : ${tList}" th:if="${team.league_id == league.league_id}">
+										<p>[[${team.team_name}]]</p>
+										<p>[[${team.team_win}]]</p>
+										<p>[[${team.team_draw}]]</p>
+										<p>[[${team.team_lose}]]</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				
+			</div>
+			
+		</div>
+	</div>
+	
+	<script>
+		
+		
+		$('.openTeams').click(function(event) {
+			
+			console.log($(event.target).parent().next().toggleClass('openTeams'));
+			
+			
+		})
+		
+		
+		
+	</script>
+	
+	
+</body>
+</html>

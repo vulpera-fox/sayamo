@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<link rel="stylesheet" href="../css/mypage.css">
+<head>
+<meta charset="UTF-8">
+
+<title>사야모</title>
+</head>
+<body>
+	
+		<div th:replace=" ~{ /layout/header :: header }"></div>
+		
+		<div class="container">
+			
+			<div class="infoArea">
+				<div class="personalInfoArea">
+					<div class="personalInfoBox">
+						<div style="padding-bottom: 20px;">
+							<p style="font-size: 26px;">내 정보</p>
+						</div>
+						<div class="usernameArea">
+							<p>아이디</p>
+							<p>[[${userVO.username}]]</p>
+						</div>
+						<div class="emailArea">
+							<p>이메일</p>
+							<p>[[${userVO.user_email}]]</p>
+						</div>
+						<div class="codeArea">
+							<p>이름</p>
+							<p>[[${userVO.user_code}]]</p>
+						</div>
+					</div>
+				</div>
+				<div class="teamPostInfoArea">
+					<div class="myteamArea">
+						
+					</div>
+					<div class="mypostArea">
+						<p>내 글</p>
+						<ul>
+							<li th:each="post : ${postList}" class="post">
+								<p th:text="'[' + ${post.board_id} + ']'"></p>
+								<p>[[${post.post_title}]]</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	
+</body>
+</html>

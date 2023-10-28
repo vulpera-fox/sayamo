@@ -1,0 +1,96 @@
+#container {
+	padding-top: 100px;
+}
+
+.registerArea {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 30px 20px;
+}
+
+input {
+	border: none;
+	width: 450px;
+	height: 40px;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.registerBox {
+	border: 1px solid lightgray;
+	border-radius: 7px;
+	padding: 30px 20px;
+}
+
+.infoArea {
+	border-radius: 7px;
+}
+
+.idArea {
+	margin-bottom: 30px;
+}
+
+.username {
+	border: 1px solid rgb(227, 229, 236);
+	
+}
+
+.pwArea {
+	margin-bottom: 30px;
+}
+
+.password {
+	border: 1px solid rgb(227, 229, 236);
+}
+
+.emailArea {
+	
+}
+
+.user_email {
+	border: 1px solid rgb(227, 229, 236);
+}
+
+.codeArea {
+	
+}
+
+.user_code {
+	border: 1px solid rgb(227, 229, 236);
+}
+
+
+
+.btnArea {
+	padding-top: 50px;
+}
+
+.registerBtn {
+	width: 406px;
+	height: 40px;
+	background-color: rgb(227, 229, 236);
+	border: 1px solid rgb(227, 229, 236);
+	font-size: 16px;
+}
+
+
+.hide {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
