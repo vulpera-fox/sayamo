@@ -62,7 +62,7 @@
 						<div sec:authorize="isAuthenticated()">
 							<div class="commentAdd">
 								<textarea class="commentBox" name="comment_content"></textarea>
-								<input hidden type="text" name="user_name" class="user_name" th:value="admin"/>
+								<input hidden type="text" name="user_name" class="user_name" th:value="${username}"/>
 								<input hidden type="text" name="post_id" class="post_id" th:value="${post.post_id}"/>
 							</div>
 							<div class="btnArea">

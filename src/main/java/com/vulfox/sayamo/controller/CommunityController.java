@@ -52,7 +52,15 @@ public class CommunityController {
 	
 	@GetMapping("/post")
 	public String moveToPost(Model model,
-							 @RequestParam("post_id") Integer post_id) {
+							 @RequestParam("post_id") Integer post_id,
+							 Authentication auth) {
+		
+		
+		if(auth != null) {
+			MyUserDetails user = (MyUserDetails)auth.getPrincipal();
+			System.out.println(user.getUsername());
+			model.addAttribute("username", user.getUsername());
+		}
 		
 		communityService.updateViews(post_id);
 		
